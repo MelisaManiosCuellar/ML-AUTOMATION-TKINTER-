@@ -5,6 +5,7 @@ import tkinter as tk
 from tkinter import ttk
 import os
 from tkinter import *
+from PIL import Image, ImageTk
 
 
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -18,16 +19,18 @@ class App(customtkinter.CTk):
         self.title("Tkinter")
         self.geometry(f"{1366}x{768}")
 
+
         # configure grid layout (4x4)
         self.grid_columnconfigure(1, weight=1)
         self.grid_columnconfigure((2, 3), weight=0)
         self.grid_rowconfigure((0, 1, 2), weight=1)
 
+        
+
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, rowspan=4,sticky="nsew")
         self.sidebar_frame.grid_rowconfigure(4, weight=1)
-
         self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Elige el modelo en función del tipo de problema", font=customtkinter.CTkFont(size=16, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=5, pady=5)
         self.button_1 = customtkinter.CTkButton(self.sidebar_frame,text="K-Neighbors")
@@ -63,12 +66,7 @@ class App(customtkinter.CTk):
 
     
         
-      
-        # # self.button_14 = customtkinter.CTkButton(self.sidebar_frame, text="Best Classifier")
-        # # self.button_14.grid( row=1, column=5, padx=4, pady=(4))
-        # # self.button_15 = customtkinter.CTkButton(self.sidebar_frame, text="Best Regressor")
-        # # self.button_15.grid( row=2, column=5, padx=4, pady=(4))
-    
+
 
          
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
@@ -89,13 +87,19 @@ class App(customtkinter.CTk):
         self.main_button_1 = customtkinter.CTkButton(master=self, fg_color="transparent", border_width=2, text_color=("gray10", "#DCE4EE"))
         self.main_button_1.grid(row=3, column=3, padx=(20, 20), pady=(20, 20), sticky="nsew")
 
-        # # create textbox
-        # self.textbox = customtkinter.CTkTextbox(self, width=250)
-        # self.textbox.grid(row=0, column=1, padx=(20, 0), pady=(20, 0), sticky="nsew")
-
-       
+        my_image = customtkinter.CTkImage(light_image=Image.open("datos.png"),
+                                  dark_image=Image.open("datos.png"),
+                                  size=(900, 600))
+        
+        self.main_button_2 = customtkinter.CTkButton(master=self,image=my_image)
+        self.main_button_2.grid(row=0, column=1, padx=(20, 0), pady=(20, 0), sticky="nsew")
 
         
+
+        # # create textbox
+        #self.textbox = customtkinter.CTkTextbox(self, height=450)
+        #self.textbox.grid(row=0, column=1, padx=(20, 0), pady=(20, 0), sticky="nsew")
+    
 
     def change_appearance_mode_event(self, new_appearance_mode: str):
         customtkinter.set_appearance_mode(new_appearance_mode)
@@ -104,8 +108,8 @@ class App(customtkinter.CTk):
         new_scaling_float = int(new_scaling.replace("%", "")) / 100
         customtkinter.set_widget_scaling(new_scaling_float)
 
-    def sidebar_button_event(Kmeans):
-        print("sidebar_button click")
+    # def sidebar_button_event(Kmeans):
+       #  print("sidebar_button click")
 
 
 if __name__ == "__main__":
