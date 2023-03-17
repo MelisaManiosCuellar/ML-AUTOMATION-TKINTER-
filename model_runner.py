@@ -9,7 +9,7 @@ root.geometry('800x450')
 #root.configure(fg=)
 
 def KNC():
-    os.startfile(r"F:\Tkinter_Module\final_project\models\KNC.py",operation="open")
+    os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\KNC.py",operation="open")
 
 def Kmeans():
     os.startfile(r"F:\Tkinter_Module\final_project\models\Kmeans.py",operation="open")
@@ -24,7 +24,7 @@ def SVMReg():
     os.startfile(r"F:\Tkinter_Module\final_project\models\SVM-Reg.py",operation="open")
 
 def Lasso():
-    os.startfile(r"F:\Tkinter_Module\final_project\models\Lasso Reg.py",operation="open")
+    os.startfile(r"Lasso Reg.py",operation="open")
 
 def Ridge():
     os.startfile(r"F:\Tkinter_Module\final_project\models\Ridge Reg.py",operation="open")

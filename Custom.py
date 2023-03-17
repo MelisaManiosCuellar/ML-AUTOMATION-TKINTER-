@@ -1,14 +1,14 @@
-import tkinter
 import tkinter.messagebox
 import customtkinter
 import tkinter as tk
-from tkinter import ttk
 import os
 from tkinter import *
 from PIL import Image, ImageTk
 
 
 customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
+def KNC():
+    os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\KNC.py",operation="open")
 
 
 class App(customtkinter.CTk):
@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
         self.sidebar_frame.grid_rowconfigure(4, weight=1)
         self.logo_label = customtkinter.CTkLabel(self.sidebar_frame, text="Elige el modelo en función del tipo de problema", font=customtkinter.CTkFont(size=16, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=5, pady=5)
-        self.button_1 = customtkinter.CTkButton(self.sidebar_frame,text="K-Neighbors")
+        self.button_1 = customtkinter.CTkButton(self.sidebar_frame,text="K-Neighbors",command=KNC)
         self.button_1.place(relx=0.5, rely=0.1, anchor=tkinter.CENTER)
         self.button_2 = customtkinter.CTkButton(self.sidebar_frame,text="K-Means")
         self.button_2.place(relx=0.5, rely=0.15, anchor=tkinter.CENTER)
