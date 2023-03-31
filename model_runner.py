@@ -3,13 +3,14 @@ import tkinter as tk
 from tkinter import *
 
 
-root= Tk()
+
+root = tk.Tk()
 root.title('Main runner')
 root.geometry('800x450')
 #root.configure(fg=)
 
 def KNC():
-    os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\KNC.py",operation="open")
+    os.startfile(r"C:\Users\SENA\Desktop\Custom", operation="open")
 
 def Kmeans():
     os.startfile(r"F:\Tkinter_Module\final_project\models\Kmeans.py",operation="open")

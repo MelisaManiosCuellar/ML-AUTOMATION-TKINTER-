@@ -10,6 +10,18 @@ customtkinter.set_default_color_theme("blue")  # Themes: "blue" (standard), "gre
 def KNC():
     os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\KNC.py",operation="open")
 
+def Kmeans():
+    os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\Kmeans.py",operation="open")
+
+def NBCls():
+    os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\NaiveBayes.py",operation="open")
+
+def SVMCls():
+    os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\SVM-Clas.py",operation="open")
+
+def SVMReg():
+    os.startfile(r"C:\Users\SENA\Desktop\Custom\ML-AUTOMATION-TKINTER-\SVM-Reg.py",operation="open")
+
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -35,13 +47,13 @@ class App(customtkinter.CTk):
         self.logo_label.grid(row=0, column=0, padx=5, pady=5)
         self.button_1 = customtkinter.CTkButton(self.sidebar_frame,text="K-Neighbors",command=KNC)
         self.button_1.place(relx=0.5, rely=0.1, anchor=tkinter.CENTER)
-        self.button_2 = customtkinter.CTkButton(self.sidebar_frame,text="K-Means")
+        self.button_2 = customtkinter.CTkButton(self.sidebar_frame,text="K-Means",command=Kmeans)
         self.button_2.place(relx=0.5, rely=0.15, anchor=tkinter.CENTER)
-        self.button_3 = customtkinter.CTkButton(self.sidebar_frame,text="Multinomial Naive-Bayes")
+        self.button_3 = customtkinter.CTkButton(self.sidebar_frame,text="Multinomial Naive-Bayes",command=NBCls)
         self.button_3.place(relx=0.5, rely=0.2, anchor=tkinter.CENTER)
-        self.button_4 = customtkinter.CTkButton(self.sidebar_frame, text="SVM Classifier")
+        self.button_4 = customtkinter.CTkButton(self.sidebar_frame, text="SVM Classifier",command=SVMCls)
         self.button_4.place(relx=0.5, rely=0.25, anchor=tkinter.CENTER)
-        self.button_5 = customtkinter.CTkButton(self.sidebar_frame, text="SVM Regressor")
+        self.button_5 = customtkinter.CTkButton(self.sidebar_frame, text="SVM Regressor",command=SVMReg)
         self.button_5.place(relx=0.5, rely=0.3, anchor=tkinter.CENTER)
         self.button_6 = customtkinter.CTkButton(self.sidebar_frame, text="Lasso Regression")
         self.button_6.place(relx=0.5, rely=0.35, anchor=tkinter.CENTER)
