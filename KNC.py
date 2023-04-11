@@ -194,7 +194,7 @@ def model():
 
 
 def files():
-    with open(r"C:\Users\musan\Desktop\model summary", "w", encoding="utf-8") as file:
+    with open(r"C:\Users\Sena\Desktop\model summary", "w", encoding="utf-8") as file:
         file.write("You have used KNeighborsClassifier \n")
         file.write("\n")
         file.write(f"The columns used for features are {feature_col} and the targetted columns are {target_col}\n")
@@ -221,19 +221,19 @@ listbox = Listbox(root, selectmode="multiple")
 listbox.pack
 
 neighbor = tk.StringVar()
-choose = ttk.Combobox(root, width=30, textvariable=neighbor)
+choose = ttk.Combobox(root, width=70, textvariable=neighbor)
 choose['values'] = ('1', '2', '3', '4', '5')
 choose.place(x=250, y=300)
 Label(root, font="System", text="Choose the number of neighbors").place(x=20, y=300)
 
 weights = tk.StringVar()
-choose = ttk.Combobox(root, width=30, textvariable=weights)
+choose = ttk.Combobox(root, width=70, textvariable=weights)
 choose['values'] = ('uniform', 'distance')
 choose.place(x=250, y=330)
 Label(root, font="System", text="Choose the weight type").place(x=20, y=330)
 
 algorithm = tk.StringVar()
-choose = ttk.Combobox(root, width=30, textvariable=algorithm)
+choose = ttk.Combobox(root, width=70, textvariable=algorithm)
 choose['values'] = ('auto', 'ball_tree', 'kd_tree', 'brute')
 choose.place(x=250, y=360)
 Label(root, font="System", text="Choose algorithm type").place(x=20, y=360)
@@ -241,13 +241,13 @@ Label(root, font="System", text="Choose algorithm type").place(x=20, y=360)
 Label(root, font="System", text="split_size").place(x=20, y=390)
 
 split = tk.StringVar()
-choose = ttk.Combobox(root, width=30, textvariable=split)
+choose = ttk.Combobox(root, width=70, textvariable=split)
 choose['values'] = ('0.2', '0.25', '0.3')
 choose.place(x=250, y=390)
 
 
 s = StringVar()
-Entry(root,text=s,width=30).place(x=250,y=450)
+Entry(root,text=s,width=70).place(x=250,y=450)
 Label(root,font="System",text='Inputs separated by commas').place(x=20,y=450)
 
 l1 = Label(root, text='Select Data File')
@@ -256,20 +256,21 @@ e1 = Entry(root, text='')
 e1.grid(row=0, column=1)
 Button(root, text='open', command=data,activeforeground="white",activebackground="black").grid(row=0, column=2)
 
-box1 = Listbox(root, selectmode='multiple')
+box1 = Listbox(root,width=30, selectmode='multiple')
+
 box1.grid(row=10, column=0)
 
-box2 = Listbox(root)
+box2 = Listbox(root,width=30)
 box2.grid(row=10, column=1)
 Button(root, text='Select X', command=getx,activeforeground="white",activebackground="black").grid(row=12, column=1)
 
-box3 = Listbox(root)
+box3 = Listbox(root,width=30)
 box3.grid(row=10, column=2)
 Button(root, text='Select Y', command=gety,activeforeground="white",activebackground="black").grid(row=12, column=2)
 
-Button(root, text="Plot", command=plot,activeforeground="white",activebackground="black").place(x=600, y=50)
+Button(root, text="Plot", command=plot,activeforeground="white",activebackground="black").place(x=400, y=50)
 
 Button(root, text="predict", command=model,activeforeground="white",activebackground="black").grid(row=12, column=3)
 
-Button(root, text="Summary", command=files,activeforeground="white",activebackground="black").place(x=450, y=190)
+Button(root, text="Summary", command=files,activeforeground="white",activebackground="black").place(x=400, y=100)
 root.mainloop()
