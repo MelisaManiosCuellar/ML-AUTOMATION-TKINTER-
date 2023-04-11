@@ -169,33 +169,33 @@ def model():
     train_accuracy = r2_score(np.ravel(y_train), model.predict(x_train))
     test_accuracy = r2_score(np.ravel(y_test), model.predict(x_test))
 
-    Label(root, text=str(y_pred), font=('Helvetica', 10, 'bold'), bg="light blue", relief="solid").place(x=400,
+    Label(root, text=str(y_pred), font=('Helvetica', 12, 'bold'), bg="light blue", relief="solid").place(x=400,
                                                                                                          y=450)
-    Label(root, text=f'Train accuracy : {train_accuracy}', font=('Helvetica', 10, 'bold'), bg="light blue",
+    Label(root, text=f'Train accuracy : {train_accuracy}', font=('Helvetica', 12, 'bold'), bg="light blue",
           relief="solid").place(x=20, y=550)
-    Label(root, text=f'Test accuracy  : {test_accuracy}', font=('Helvetica', 10, 'bold'), bg="light blue",
+    Label(root, text=f'Test accuracy  : {test_accuracy}', font=('Helvetica', 12, 'bold'), bg="light blue",
           relief="solid").place(x=20, y=600)
 
     if abs(train_accuracy - test_accuracy) > 0.1 or (train_accuracy < .6 and test_accuracy < .6):
-        Label(root, text='BAD  MODEL', font=('Helvetica', 10, 'bold'), bg="red", relief="solid").place(x=300,
+        Label(root, text='BAD  MODEL', font=('Helvetica', 12, 'bold'), bg="red", relief="solid").place(x=300,
                                                                                                               y=550)
 
         if (train_accuracy > test_accuracy) and abs(train_accuracy - test_accuracy) > 0.1:
-            Label(root, text='OVERFIT', font=('Helvetica', 10, 'bold'), bg="red", relief="solid").place(
+            Label(root, text='OVERFIT', font=('Helvetica', 12, 'bold'), bg="red", relief="solid").place(
                 x=400,
                 y=550)
 
         if train_accuracy < 0.6 and test_accuracy < 0.6:
-            Label(root, text='UNDERFIT', font=('Helvetica', 10, 'bold'), bg="red", relief="solid").place(
+            Label(root, text='UNDERFIT', font=('Helvetica', 12, 'bold'), bg="red", relief="solid").place(
                 x=400,
                 y=550)
 
     elif (train_accuracy < test_accuracy) and abs(train_accuracy - test_accuracy) > 0.1:
-        Label(root, text='GOOD MODEL', font=('Helvetica', 10, 'bold'), bg="green", relief="solid").place(x=300,
+        Label(root, text='GOOD MODEL', font=('Helvetica', 12, 'bold'), bg="green", relief="solid").place(x=300,
                                                                                                               y=550)
 
     elif train_accuracy > 0.85 and test_accuracy > 0.85:
-        Label(root, text='VERY GOOD MODEL', font=('Helvetica', 10, 'bold'), bg="green", relief="solid").place(
+        Label(root, text='VERY GOOD MODEL', font=('Helvetica', 12, 'bold'), bg="green", relief="solid").place(
             x=300, y=550)
 
     return train_accuracy, test_accuracy, x_tests, y_pred
